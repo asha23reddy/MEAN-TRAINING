@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PHONE DIRECTORY</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="mobilephone.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>PHONE BOOK <span class="glyphicon glyphicon-pencil"></span></h1>
+<marquee><h2>You have to enter the user name and mobile number</marquee></h2>
+  <p>NAME  <span class="glyphicon glyphicon-user"></span><br>
+<input type="text" id="name" placeholder="Enter Name" >
+</p>
+<p>MOBILE NUMBER  <span class="glyphicon glyphicon-phone"></span><br>
+<input type="text" id="mobile" placeholder="Enter Mobile" ></p>
+<button id='submit' class="btn-default" onclick="addnumber()">Submit</button>
+
+<div id="result"></div>
+
+<script type="text/javascript">
+var phoneList = [];
+
+function deleteToDo()
+{
+console.log('index to be removed '+index);
+todolist.splice(index);
+console.log('after removal ' +todolist);
+}
+/*
+Adds customer to CustomerList
+*/
+function addnumber()
+{
+var name = document.getElementById("name").value;
+var mobile = document.getElementById("mobile").value;
+var cust = new Customer(name,mobile);
+var status = validateData(cust);
+if (status ==false)
+return;
+var count = phoneList.push(cust);
+console.log('count ',count);
+console.log('phone list ',phoneList);
+displayCustomers(cust,count);
+}
+function Customer(name,mobile)
+{
+this.name= name;
+this.mobile = mobile;
+
+}
+function validateData(cust){
+if (cust.name =="")
+{
+alert("Please enter your name ");
+document.getElementById("name").focus();
+return false;
+}
+if (cust.mobile =="")
+{
+alert("Please enter your mobile number ");
+document.getElementById("mobile").focus();
+return false;
+}
+
+}
+function displayCustomers(cust,count){
+var result = '';
+var outerdiv = document.getElementById("result");
+var custdiv = document.createElement("div");
+var name = document.createElement("input");
+var mobile = document.createElement("input");
+var edit = document.createElement("button");
+var del = document.createElement("button");
+var brk = document.createElement("br")
+custdiv.setAttribute("id",count);
+edit.setAttribute("id",count);
+del.setAttribute("id",count);
+// name
+name.type = "text";
+name.value = cust.name;
+// mobile
+mobile.type = "text";
+mobile.value = cust.mobile;
+// email
+
+edit.innerText ="Edit";
+del.innerText ="Delete";
+custdiv.appendChild(name);
+custdiv.appendChild(mobile);
+custdiv.appendChild(edit);
+custdiv.appendChild(del);
+custdiv.appendChild(brk);
+outerdiv.append(custdiv);
+edit.addEventListener("click",editCustomer);
+del.addEventListener("click",deleteCustomer); 
+
+}
+function editCustomer(){
+console.log('edit clicked');
+var editedValue='';
+console.log(this.parentNode.firstChild.innerHTML);
+// edit = this.parentNode.firstChild;
+count =event.srcElement.id;
+// editedValue = todoedit.value;
+var par = this.parentNode;
+console.log('parent ',par);
+var editedName = par.childNodes[0].value;
+var editedMobile = par.childNodes[1].value;
+console.log(' name : ',editedName, ' mobile :',editedMobile);
+var editedCustomer = new Customer(editedName,editedMobile);
+
+phoneList[count-1] = editedCustomer;
+console.log('customerList after update :',phoneList);
+}
+function deleteCustomer(){
+console.log('delete clicked');
+console.log(event.srcElement.id);
+console.log(this.parentNode);
+count = event.srcElement.id;
+var pare = this.parentNode;
+pare.remove();
+phoneList.splice(count-1,1);
+console.log('after deletion :',phoneList);
+}
+
+</script>
+</div>
+</div>
+</body>
+</html>
+
+

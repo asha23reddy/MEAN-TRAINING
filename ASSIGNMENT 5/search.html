@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+</head>
+<body style="background-color: #aaa">
+	<h1>Searching...</h1>
+	<script type="text/javascript">
+function SearchElement(no,key)
+{
+	var res;
+	var l=no.length;
+	for(i=0;i<l;i++)
+	{
+	if (no[i]==key)
+	{
+		return true;
+		break;
+	}
+}
+}
+var data=[10,500,45,55,4567];
+var key=50;
+if(SearchElement(data,key))
+{
+console.log('The number '+ key +' is present is an array') ;
+}	
+else 
+{
+console.log("The number "+ key+" is not present in an array");
+}
+</script>
+</body>
+</html>

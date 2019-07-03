@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.header1 {
+      padding:15px;
+      text-align: left;
+      background-color: aqua;
+      font-family: verdana;
+    }
+    .header2 {
+      padding:15px;
+      text-align: left;
+      background-color: #93FA16;
+      font-family: verdana;
+    }
+    .header3 {
+      padding:15px;
+      text-align: left;
+      background-color: #08446E;
+      font-family: verdana;
+      font-style: bold;
+      color: snow;
+
+    }
+    .header4 {
+      padding:15px;
+      text-align: left;
+      background-color: #F5371D;
+      font-family: verdana;
+    }
+    .header{
+      padding:15px;
+      text-align: center;
+      font-weight: bold;
+      background-color: #D25140;
+      font-family: Georgia;
+  color:black;
+    }
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>FLIP KART</h1>
+</div>
+<div class="header1">
+<h2>NEW ARRIVALS</h2>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#4ddddd;">
+
+  <h2>MOBILES</h2>
+  <p>Samsung,lenovo,redmi...<br>2000-100000</p>
+  <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:orange;">
+  <h2>COMPUTERS</h2>
+  <p>computers-dell,hp,lenovo..<br>Rs.50000-100000</p>
+  <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:pink;">
+  <h2>CLOTHING</h2>
+  <p>sarees,kurthi's,jean,T-shirts..<br>Rs:400-100000</p>
+  <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#e066ff;">
+  <h2>FOOT WEAR</h2>
+  <p>paragon,vkc pride,bata...<br>Rs:500-5000</p>
+  <p>Some text..</p>
+  </div>
+</div>
+<div class="row">
+<div class="header2">
+<h2><marquee>TODAY'S OFFER</marquee></h2>
+</div></div>
+<div class="row">
+<div class="header3">
+<h2>FAST MOVING ITEMS</h2>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#4ddddd;">
+  <h2>Column 1</h2>
+<p>MOBILES<br>samsung</p>
+  </div>
+  <div class="column" style="background-color:orange;">
+  <h2>Column 2</h2>
+  <p>COMPUTERS<br>dell</p>
+  </div>
+  <div class="column" style="background-color:pink;">
+  <h2>Column 3</h2>
+  <p>CLOTHING<br>sarees</p>
+  </div>
+  <div class="column" style="background-color:#e066ff;">
+  <h2>Column 4</h2>
+ <p>FOOT WEAR<br>paragon</p>
+  </div>
+  <div class="row">
+  <div class="header4">
+  <p><marquee> Thank you</marquee></p>
+</div>
+</div>
+</div>
+
+</body>
+</html>
