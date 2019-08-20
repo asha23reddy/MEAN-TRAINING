@@ -1,0 +1,51 @@
+
+<br>
+<br><div align="center">
+    <input type="text"  placeholder="Enter Name or Quaification "ng-model="doctor.searchDoctor">
+    <button ng-click="search()" class="glyphicon glyphicon-search" >Search</button>
+    <td><button class="glyphicon glyphicon-user" ng-click="addNew()" >New</button></td>
+    <!-- <td><button ng-click="clear()" > Clear</button></td> -->
+    <br>
+    <br>
+    <br>
+
+        <table >
+        <tr>
+            <th>Name</th>
+            <th>Qualification</th>
+            <th>Specialization</th>
+            <th>Address</th>          
+            <th>Patient Details</th>
+            <th>Action</th>
+        </tr>
+        <tbody ng-repeat="x in doctordata">
+            <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.qualification }}</td>
+            <td>{{x.specialization}}</td>
+            <td>{{x.address}}</td>
+                        <td>
+                <table >
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Chiefcomplaint</th>
+                    </tr>
+                    <tbody ng-repeat="y in x.patientDetails">
+                        <tr>
+                            <td>{{y.name}}</td>
+                            <td>{{y.age}}</td>
+                            <td>{{y.complaint}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <td><button class="glyphicon glyphicon-edit" ng-click="Edit(x._id)" ></button>
+            <button class="glyphicon glyphicon-trash" ng-click="remove(x._id)" ><br></button>
+            <button class="glyphicon glyphicon-info-sign" ng-click="viewdetails(x._id)" ></button></td>
+            </td>
+        </tr>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    

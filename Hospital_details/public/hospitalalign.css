@@ -1,0 +1,31 @@
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 10px;
+  column-width: 1000px;
+font-size: 14px;
+text-align: center;
+color: black;
+}
+tbody:nth-child(odd){background-color: whitesmoke;}
+tbody:nth-child(even){background-color:snow;}
+tbody:hover {
+	background-color:  #F0F8FF;
+}
+th{
+  background-color: ghostwhite;
+}
+h1,h2{
+	text-align: center;
+font-weight: bold;
+font-family:'Franklin Gothic Medium' ;
+}
+  .btn-default {
+     border-color: grey;
+     font-weight: bold;
+   }
+  .btn-default:hover {
+      background: white;
+      color: #000;
+   }
+  

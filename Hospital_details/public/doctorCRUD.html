@@ -1,0 +1,54 @@
+    <div align="center">
+        <h2>Doctor Details</h2>
+        <form name="details">
+            <table>
+            <tr>
+                    <td>Name* </td>
+                    <td><input type="text" ng-model="doctor.name" required></td>
+            </tr>    
+            <tr>
+                    <td>Qualification</td>
+                    <td><input type="text" ng-model="doctor.qualification"></td>
+            </tr> 
+            <tr>
+                    <td>Specialization</td>
+                    <td><input type="text" ng-model="doctor.specialization"></td>
+            </tr>
+            <tr>
+                    <td>Address</td>
+                    <td><input type="text" ng-model="doctor.address"></td>
+            </tr>            
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+         <h4><label>Patient Details</label></h4>
+            <input type="button" value="AddNewPatient" ng-click="newPatient()">
+            <br><br>
+        <table>
+        <tr>
+            <th>Name*</th>
+            <th>Age</th>
+            <th>Chiefcomplaint</th>
+            <th>Action</th>
+            
+        </tr>
+        <tr ng-repeat="patient in doctor.patientDetails">
+            
+                <td><input type="text" ng-model="patient.name" required ></td>
+                <td><input type="number" ng-model="patient.age" ></td>
+                <td><input type="text" ng-model="patient.complaint"></td>
+                <td><input type="button" ng-click="remove($index)" value="Delete"></td>
+
+        </tr>
+        </table>
+
+            <br><br>
+            <input type="submit" class="btn btn-primary" value="SUBMIT" ng-click="add_update()" ng-disabled="details.$invalid" >
+            <input type="button" class="btn btn-primary" value="CANCEL" ng-click="cancel()" >
+
+</form>
+</body>
+</div>
+</div>

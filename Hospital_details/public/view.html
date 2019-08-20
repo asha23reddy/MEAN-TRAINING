@@ -1,0 +1,27 @@
+<div align="center">
+      <br><br>
+       <table width=50%>
+           <u> <h2>Doctor Information</h2></u>
+
+		<tr><td>Doctor name</td> <td>{{ doctor.name }}</td></tr><br>
+	<tr><td>Qualification</td><td>{{doctor.qualification}}</td></tr><br>
+<tr>	<td>Specialization</td><td>{{doctor.specialization}}</td></tr><br>
+    <tr><td>Address</td><td>{{doctor.address}}</td></tr><br><br>
+    </table>
+<br>
+<br>
+<u><h2>Patient Information</h2></u>
+		 <table width=50%>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Chiefcomplaint</th>
+                    </tr>
+                    <tr  ng-repeat="y in doctor.patientDetails">
+                        <td>{{y.name}}</td>
+                        <td>{{y.age}}</td>
+                        <td>{{y.complaint}}</td>
+                        </tr>
+                           </table>
+		<input type="button" value="Cancel" ng-click="cancel()">
+</div>	

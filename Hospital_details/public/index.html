@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+    <head>
+        <title>
+            INDEX PAGE
+        </title>
+        </head>
+   <body>
+        <div ng-controller="appController">
+        <div class="container-fluid">
+        <div class="jumbotron">
+        <i><h1> Hospital Information </h1></i>
+        </div>
+        <input type="button" class="btn btn-info active" value=" AddDetails" ng-click="Doctor_page()">
+        <input type="button" class="btn btn-info active" value=" Hospitaldetails" ng-click="Display()"><br>
+
+       <div ui-view></div>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular-animate/angular-animate.min.js"></script>
+    <script src="js/angular-route/angular-route.min.js"></script>
+    <script src="js/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <link rel="stylesheet" href="hospitalalign.css">
+    <script src="app.js"></script>
+    <script src="doctorController.js"></script>
+    <script src="doctorCRUDcontroller.js"></script>
+     </div>
+     </div>
+     </div>a
+    </body>
+</html>
